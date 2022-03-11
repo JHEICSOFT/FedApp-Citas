@@ -1,0 +1,540 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B265B459-B4B6-44BC-BDB1-B401C58DC48F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PlayerUI</RootNamespace>
+    <AssemblyName>FedApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icono.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="FireSharp, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FireSharp.2.0.4\lib\portable-net45+sl5+wp8+win8\FireSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\VisualBasic.PowerPacks.Vs.1.0.0\lib\Microsoft.VisualBasic.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\VisualBasic.PowerPacks.Vs.1.0.0\lib\Microsoft.VisualBasic.PowerPacks.Vs.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataHISDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataHISDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_consultorio\AdmisionCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_consultorio\AdmisionCita.Designer.cs">
+      <DependentUpon>AdmisionCita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_consultorio\citasNurse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_consultorio\citasNurse.Designer.cs">
+      <DependentUpon>citasNurse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_consultorio\EnfermeriaVacuna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_consultorio\EnfermeriaVacuna.Designer.cs">
+      <DependentUpon>EnfermeriaVacuna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_consultorio\guardarCita.cs" />
+    <Compile Include="Forms_consultorio\LoginOffline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_consultorio\LoginOffline.Designer.cs">
+      <DependentUpon>LoginOffline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_consultorio\UpdateCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_consultorio\UpdateCitas.Designer.cs">
+      <DependentUpon>UpdateCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_consultorio\UserConsultorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_consultorio\UserConsultorio.Designer.cs">
+      <DependentUpon>UserConsultorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_ninio\Buscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_ninio\Buscar.Designer.cs">
+      <DependentUpon>Buscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_Covid\BuscarPacCovid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Covid\BuscarPacCovid.Designer.cs">
+      <DependentUpon>BuscarPacCovid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conexion.cs" />
+    <Compile Include="DataHISDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataHISDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_ninio\CredQuintilesCompleto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_ninio\CredQuintilesCompleto.Designer.cs">
+      <DependentUpon>CredQuintilesCompleto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_ninio\DescPadronNominal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_ninio\DescPadronNominal.Designer.cs">
+      <DependentUpon>DescPadronNominal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_Covid\Covid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Covid\Covid.Designer.cs">
+      <DependentUpon>Covid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_Indicadores\GestanteVifPosi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Indicadores\GestanteVifPosi.Designer.cs">
+      <DependentUpon>GestanteVifPosi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_Indicadores\UsuariaPpffViole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Indicadores\UsuariaPpffViole.Designer.cs">
+      <DependentUpon>UsuariaPpffViole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_Mujer\Gesta4Exmanes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Mujer\Gesta4Exmanes.Designer.cs">
+      <DependentUpon>Gesta4Exmanes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_Mujer\GestaQuinComple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Mujer\GestaQuinComple.Designer.cs">
+      <DependentUpon>GestaQuinComple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_ninio\RecienNacTamiza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_ninio\RecienNacTamiza.Designer.cs">
+      <DependentUpon>RecienNacTamiza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_ninio\RNBAJOPESO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_ninio\RNBAJOPESO.Designer.cs">
+      <DependentUpon>RNBAJOPESO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_Usuario\Editar_Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Usuario\Editar_Usuario.Designer.cs">
+      <DependentUpon>Editar_Usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_Indicadores\credCompleto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Indicadores\credCompleto.Designer.cs">
+      <DependentUpon>credCompleto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportarCnv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportarCnv.Designer.cs">
+      <DependentUpon>ImportarCnv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportarCnvSql.cs" />
+    <Compile Include="LoginFed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginFed.Designer.cs">
+      <DependentUpon>LoginFed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN.designer.cs">
+      <DependentUpon>MAIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_ninio\INDICADOR2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_ninio\INDICADOR2.designer.cs">
+      <DependentUpon>INDICADOR2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_ninio\INDICADOR3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_ninio\INDICADOR3.Designer.cs">
+      <DependentUpon>INDICADOR3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantenimientoFedApp\MantenimientoApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantenimientoFedApp\MantenimientoApp.Designer.cs">
+      <DependentUpon>MantenimientoApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mantenimientoFirebase.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MantenimientoFedApp\RecuperarPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantenimientoFedApp\RecuperarPass.Designer.cs">
+      <DependentUpon>RecuperarPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_Usuario\Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Usuario\Usuarios.Designer.cs">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usuariosFirebase.cs" />
+    <EmbeddedResource Include="Forms_consultorio\AdmisionCita.resx">
+      <DependentUpon>AdmisionCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_consultorio\citasNurse.resx">
+      <DependentUpon>citasNurse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_consultorio\EnfermeriaVacuna.resx">
+      <DependentUpon>EnfermeriaVacuna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_consultorio\LoginOffline.resx">
+      <DependentUpon>LoginOffline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_consultorio\UpdateCitas.resx">
+      <DependentUpon>UpdateCitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_consultorio\UserConsultorio.resx">
+      <DependentUpon>UserConsultorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_ninio\Buscar.resx">
+      <DependentUpon>Buscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Covid\BuscarPacCovid.resx">
+      <DependentUpon>BuscarPacCovid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_ninio\CredQuintilesCompleto.resx">
+      <DependentUpon>CredQuintilesCompleto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_ninio\DescPadronNominal.resx">
+      <DependentUpon>DescPadronNominal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Covid\Covid.resx">
+      <DependentUpon>Covid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Indicadores\GestanteVifPosi.resx">
+      <DependentUpon>GestanteVifPosi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Indicadores\UsuariaPpffViole.resx">
+      <DependentUpon>UsuariaPpffViole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Mujer\Gesta4Exmanes.resx">
+      <DependentUpon>Gesta4Exmanes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Mujer\GestaQuinComple.resx">
+      <DependentUpon>GestaQuinComple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_ninio\RecienNacTamiza.resx">
+      <DependentUpon>RecienNacTamiza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_ninio\RNBAJOPESO.resx">
+      <DependentUpon>RNBAJOPESO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Usuario\Editar_Usuario.resx">
+      <DependentUpon>Editar_Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_ninio\INDICADOR2.es-419.resx">
+      <DependentUpon>INDICADOR2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Indicadores\credCompleto.resx">
+      <DependentUpon>credCompleto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportarCnv.resx">
+      <DependentUpon>ImportarCnv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginFed.resx">
+      <DependentUpon>LoginFed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN.resx">
+      <DependentUpon>MAIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_ninio\INDICADOR2.resx">
+      <DependentUpon>INDICADOR2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_ninio\INDICADOR3.resx">
+      <DependentUpon>INDICADOR3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantenimientoFedApp\MantenimientoApp.resx">
+      <DependentUpon>MantenimientoApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="MantenimientoFedApp\RecuperarPass.resx">
+      <DependentUpon>RecuperarPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Usuario\Usuarios.resx">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataHISDataSet.xsc">
+      <DependentUpon>DataHISDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataHISDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataHISDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataHISDataSet.xss">
+      <DependentUpon>DataHISDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataHISDataSet1.xsc">
+      <DependentUpon>DataHISDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataHISDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataHISDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataHISDataSet1.xss">
+      <DependentUpon>DataHISDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\expEx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\nume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\denomi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\fondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\fondo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icono.ico" />
+    <None Include="img\imgCitas\informacion.png" />
+    <None Include="img\imgCitas\admision.png" />
+    <None Include="img\imgCitas\enfermera.png" />
+    <None Include="img\imgCitas\buscarniño.png" />
+    <None Include="img\imgCitas\cita-medica.png" />
+    <None Include="img\imgCitas\niñoCitas.png" />
+    <None Include="img\imgCitas\pac.png" />
+    <None Include="img\imgCitas\paciente.png" />
+    <None Include="img\notification %281%29.png" />
+    <None Include="img\notification.png" />
+    <None Include="img\user_edit.png" />
+    <None Include="img\mantenimiento.png" />
+    <None Include="img\updated.png" />
+    <None Include="img\ges4lab.png" />
+    <None Include="img\gestante.png" />
+    <None Include="img\exit.png" />
+    <None Include="img\guia.png" />
+    <None Include="img\buscarniño.png" />
+    <None Include="img\buscarcovid.png" />
+    <None Include="img\virus.png" />
+    <None Include="img\madre.png" />
+    <None Include="img\ninos.png" />
+    <None Include="img\chico.png" />
+    <None Include="img\bebe1.png" />
+    <None Include="img\user.png" />
+    <None Include="img\descargar1.png" />
+    <None Include="img\usuario.png" />
+    <None Include="img\buscar.png" />
+    <None Include="img\coronavirus.png" />
+    <None Include="img\INDIADOR1.png" />
+    <None Include="img\descargar.png" />
+    <None Include="img\maximi.png" />
+    <None Include="img\maximize.png" />
+    <None Include="Resources\fondoFedApp.png" />
+    <None Include="Resources\fedapp.png" />
+    <None Include="img\minimizar.png" />
+    <None Include="img\close.png" />
+    <None Include="img\covid.png" />
+    <None Include="img\ibm-watson.gif" />
+    <None Include="img\login.gif" />
+    <None Include="img\cortana.gif" />
+    <None Include="Resources\cortana.gif" />
+    <None Include="Resources\cortana.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

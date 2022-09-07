@@ -1,0 +1,3 @@
+
+link padron nominal 
+https://padronnominal.reniec.gob.pe/padronn/reporte/padron_edad_xls.do?coUbigeo=22&deEdad=0&hastaEdad=0&deUbigeo=SAN%20MARTIN&feIni=01/08/2020&feFin=07/08/2021&tiRegFecha=T&esPadron=1

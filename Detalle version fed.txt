@@ -1,0 +1,9 @@
+login web
+recuperar contraseña
+exportar .csv
+exportar.xls
+indicadores (1-2-3-5-6)
+descargar archivos
+cadena conexion para cualquier pc(ok)
+ver los indicadores que falta(indicador 1,2y3 listo)
+ultima modificacion 17.08.2021 a las 18:39
